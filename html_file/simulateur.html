@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supméca Racing Team – Projet Simulateur de Course</title>
+
+  <meta name="description" content="Découvrez le projet de simulateur de course du Supméca Racing Team : développement d'un outil d'entraînement au pilotage et à la dynamique des véhicules, combinant mécanique et informatique.">
+  <meta name="keywords" content="Supméca Racing Team, simulateur de course, dynamique des véhicules, ingénierie informatique, pilotage, ISAE Supméca, projet étudiant, R&D">
+  <meta name="author" content="Supméca Racing Team">
+
+  <meta property="og:title" content="Supméca Racing Team – Simulateur de Course">
+  <meta property="og:description" content="Développement d'un simulateur de course combinant mécanique et informatique.">
+  <meta property="og:image" content="https://ton-site.netlify.app/image_file/simulateur.jpg">
+  <meta property="og:url" content="https://ton-site.netlify.app/htm_file/simulateur.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../image_file/logo.png">
+
+  <link rel="stylesheet" href="../demo.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" aria-label="Retour à l'accueil">
+      <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="association.html">PRÉSENTATION</a></li>
+        <li><a href="karting.html">KARTING</a></li>
+        <li><a href="reparation.html">RÉPARATION MÉCANIQUE</a></li>
+        <li><a href="formula_student.html">FORMULA STUDENT</a></li>
+        <li class="active"><a href="simulateur.html">SIMULATEUR</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 style="display:none;">Projet Simulateur de Course Supméca Racing Team</h1>
+
+    <section class="section" id="intro-simu" style="flex-direction: row-reverse;">
+      <div class="image" style="background-image: url('../image_file/simulateur.jpg');" data-aos="fade-left" role="img" aria-label="Étudiant utilisant le simulateur de course."></div>
+      <div class="text" data-aos="fade-right">
+        <h2>Initiation et Entraînement : Le Simulateur de Course</h2>
+        <p>Notre simulateur a deux missions principales. Il permet d'abord à tous les étudiants de l'ISAE-Supméca de découvrir de manière ludique les sensations du pilotage de course et les bases de la dynamique automobile.</p>
+        <p>Ensuite, il sert de plateforme d'entraînement pour nos pilotes et les équipes participantes aux compétitions d'endurance externes (comme les 24h de l'ESSEC). C'est un outil essentiel pour maîtriser la stratégie et les réflexes en course.</p>
+        <a href="contact.html" class="btn-primary">Essayer le simulateur</a>
+      </div>
+    </section>
+
+    <section class="section reverse" id="dev-mecanique" style="background-color: var(--grey-light);">
+      <div class="image" style="background-image: url('../image_file/simulateur_chassis.jpg');" data-aos="fade-right" role="img" aria-label="Structure du simulateur et vérins hydrauliques ou électriques."></div>
+      <div class="text" data-aos="fade-left">
+        <h2>Conception : Un Châssis Dynamique pour l'Immersion</h2>
+        <p>L'aspect technique se concentre sur la structure : nous concevons un châssis en profilés d'aluminium rigides et modulables. Le simulateur est monté sur des **vérins** qui reproduisent les mouvements de la voiture (tangage, roulis), offrant des sensations de pilotage véritable.</p>
+        <p>Nous utilisons le logiciel de simulation Assetto Corsa pour ses modèles physiques avancés. Les données de ce logiciel sont directement exploitées pour alimenter la logique des vérins, garantissant une immersion de haute fidélité pour l'entraînement.</p>
+      </div>
+    </section>
+
+    <section class="section full-width-text" id="pedagogie" data-aos="fade-up">
+      <div class="text" style="flex: 1 1 80%; max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2>Compétences et Objectifs Clés</h2>
+        <p style="margin-bottom: 2rem;">La participation au projet Simulateur permet d'acquérir des compétences spécifiques au-delà de la simple formation académique :</p>
+        <ul style="list-style-type: none; padding: 0; text-align: left; columns: 2; column-gap: 40px; font-size: 1.1rem;">
+          <li>🏎️ Pilotage Compétitif : Maîtrise des techniques de pilotage et endurance mentale (préparation 24h ESSEC).</li>
+          <li>🔧 Conception Mécanique : Dimensionnement et fabrication de la structure modulaire en aluminium.</li>
+          <li>💡 Électronique de Commande : Intégration des actionneurs et gestion des systèmes de vérin.</li>
+          <li>🤝 Événementiel : Organisation de sessions de découverte au sein du club et de l'école.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><a href="contact.html" class="btn-secondary">Contacter l'équipe</a></p>
+    <p>📧 <a href="mailto:supmeca.racingteam@isae-supmeca.fr">supmeca.racingteam@isae-supmeca.fr</a></p>
+
+    <div class="social-links" style="margin-top: 15px;">
+      <a href="https://www.instagram.com/supmeca_racing_team/" target="_blank" rel="noopener noreferrer" style="margin-right: 15px;">
+        <img src="../image_file/Instagram_logo_2022.svg.png" alt="Instagram Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        @supmeca_racing_team
+      </a>
+      <a href="https://www.linkedin.com/company/supmeca-racing-team/" target="_blank" rel="noopener noreferrer">
+        <img src="../image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        LinkedIn
+      </a>
+    </div>
+
+    <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

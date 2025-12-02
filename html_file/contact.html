@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez Supméca Racing Team</title>
+
+  <meta name="description" content="Formulaire de contact pour Supméca Racing Team. Contactez-nous pour les partenariats, l'adhésion ou toute question sur nos projets (Formula Student, Karting, Simulateur).">
+
+  <link rel="icon" type="image/png" href="../image_file/logo.png">
+
+  <link rel="stylesheet" href="../demo.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+
+  <header>
+    <a href="#top" aria-label="Retour à l'accueil">
+      <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="association.html">PRÉSENTATION</a></li>
+        <li><a href="karting.html">KARTING</a></li>
+        <li><a href="reparation.html">RÉPARATION MÉCANIQUE</a></li>
+        <li><a href="formula_student.html">FORMULA STUDENT</a></li>
+        <li><a href="simulateur.html">SIMULATEUR</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="contact full-page-form">
+      <h2 data-aos="fade-up">📩 Contactez l'équipe</h2>
+      <p class="subtitle" data-aos="fade-up">Que vous soyez sponsor potentiel, étudiant intéressé ou simple curieux, nous vous répondrons rapidement.</p>
+
+      <form name="contact" method="POST" data-aos="fade-up" netlify>
+
+        <input type="hidden" name="form-name" value="contact" />
+
+        <div class="form-group">
+          <label for="name">Nom / Prénom</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Objet du Message</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>-- Sélectionnez l'objet de votre message --</option>
+            <option value="Sponsoring">Proposition de Sponsoring / Partenariat</option>
+            <option value="Adhesion">Demande d'adhésion à l'équipe</option>
+            <option value="General">Question générale sur nos projets</option>
+            <option value="Technique">Question technique / Support</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Envoyer le message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="contact.html" class="btn-secondary">Contacter l'équipe</a>
+    </p>
+    <p>
+      📧 <a href="mailto:supmeca.racingteam@isae-supmeca.fr">supmeca.racingteam@isae-supmeca.fr</a>
+    </p>
+
+    <div class="social-links" style="margin-top: 15px;">
+      <a href="https://www.instagram.com/supmeca_racing_team/" target="_blank" rel="noopener noreferrer" style="margin-right: 15px;">
+        <img src="../image_file/Instagram_logo_2022.svg.png" alt="Instagram Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        @supmeca_racing_team
+      </a>
+
+      <a href="https://www.linkedin.com/company/supmeca-racing-team/" target="_blank" rel="noopener noreferrer">
+        <img src="../image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        LinkedIn
+      </a>
+    </div>
+
+    <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

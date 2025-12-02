@@ -1,0 +1,523 @@
+/* =========================
+   Palette de couleurs
+   ========================= */
+:root {
+  --primary-dark: #1C1C28;     /* Couleur principale foncée */
+  --primary-orange: #F27E26;   /* Couleur orange pour les boutons et accents */
+  --primary-red: #F24D21;      /* Couleur rouge secondaire */
+  --accent-red: #FF1111;       /* Rouge vif pour hover */
+  --white: #FFFFFF;            /* Blanc */
+  --grey-light: #F0F0F4;       /* Fond clair */
+}
+
+/* =========================
+   Base du site
+   ========================= */
+html {
+  scroll-behavior: smooth; /* Pour un scroll fluide quand on clique sur un lien interne */
+  font-size: 16px;         /* Taille de base */
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--grey-light);
+  color: var(--primary-dark);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* =========================
+   Header
+   ========================= */
+header {
+  background: var(--primary-dark);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ajout d'une ombre discrète */
+}
+
+header img {
+  height: 60px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  transition: all 0.3s ease; /* Changement pour inclure le border-bottom */
+}
+
+/* Amélioration du style hover/focus et ajout du style 'active' */
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--primary-orange);
+  border-bottom: 2px solid var(--primary-orange);
+  padding-bottom: 3px;
+  outline: none;
+}
+nav ul li.active a { /* Pour la page courante */
+  color: var(--primary-orange);
+  border-bottom: 2px solid var(--primary-orange);
+  padding-bottom: 3px;
+}
+
+/* =========================
+   Hero (image ou vidéo en plein écran)
+   ========================= */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65); /* Légèrement plus sombre pour meilleure lisibilité */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Augmentation de la taille max */
+  color: var(--primary-orange);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+
+/* =========================
+   Boutons
+   ========================= */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.9rem 1.8rem; /* Légèrement plus grand */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700; /* Plus gras */
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none; /* S'assure qu'il n'y a pas de bordure par défaut sur les boutons */
+}
+
+.btn-primary {
+  background: var(--primary-red);
+  color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--accent-red);
+  transform: translateY(-2px); /* Petit effet 3D au survol */
+  outline: none;
+}
+
+.btn-secondary {
+  background: var(--primary-orange);
+  color: var(--white);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--primary-red);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* =========================
+   Sections (Blocks de contenu)
+   ========================= */
+.section {
+  display: flex;
+  align-items: stretch; /* Assure que les blocs texte et image ont la même hauteur */
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden; /* Permet de contenir l'effet de zoom de l'image */
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.image {
+  flex: 1 1 50%;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.03);
+}
+
+.text {
+  flex: 1 1 40%;
+  padding: 4rem 3rem; /* Augmentation du padding pour mieux respirer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text h2 {
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   Frise chronologique (Non utilisée dans index.html, mais conservée)
+   ========================= */
+.timeline-container {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 3px solid var(--primary-orange);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-red);
+  border-radius: 50%;
+}
+
+.timeline-date {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+  padding-left: 1rem;
+}
+
+/* =========================
+   Sponsors
+   ========================= */
+.sponsors {
+  background: var(--white);
+  text-align: center;
+  padding: 4rem 2rem; /* Plus de padding */
+}
+
+.sponsors h2 {
+  color: var(--primary-orange);
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.sponsor-logos img {
+  max-height: 80px; /* Légèrement plus grand */
+  max-width: 150px;
+  filter: grayscale(100%);
+  opacity: 0.7; /* Légèrement moins opaque */
+  transition: filter 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* =========================
+   Contact
+   ========================= */
+.contact {
+  background: var(--grey-light);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  color: var(--primary-orange);
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+}
+
+form {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: left;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15); /* Ombre plus marquée */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1rem; /* Plus de padding pour les champs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 8px rgba(242,126,38,0.5); /* Ombre plus visible au focus */
+  outline: none;
+}
+
+/* Centrage du bouton dans le formulaire */
+form button[type="submit"] {
+  display: block;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  background: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+  border-top: 3px solid var(--primary-orange); /* Ajout d'une ligne d'accent */
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+  color: var(--primary-orange);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 900px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  header img {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Navigation */
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 0.3rem 0.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    height: 60vh; /* Moins haut sur mobile */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Sections */
+  .section {
+    flex-direction: column !important; /* Force le 'column' pour toutes les sections sur mobile */
+    min-height: auto;
+  }
+
+  .image {
+    min-height: 40vh;
+    order: 1; /* L'image sera toujours au-dessus du texte, sauf si vous voulez l'inverser */
+  }
+
+  .text {
+    flex: 1 1 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    order: 2;
+  }
+
+  .text a.btn-secondary {
+    margin-top: 1rem;
+  }
+
+  /* Sponsors */
+  .sponsors h2, .contact h2 {
+    font-size: 2rem;
+  }
+
+  .sponsor-logos {
+    gap: 1.5rem;
+  }
+
+  .sponsor-logos img {
+    max-height: 60px;
+  }
+
+  /* Contact */
+  form {
+    padding: 1.5rem;
+  }
+
+  /* Frise chronologique */
+  .timeline-container {
+    padding-left: 1rem;
+    border-left: 2px solid var(--primary-orange);
+  }
+
+  .timeline-dot {
+    left: -6px;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Style additionnel pour les pages de contact si le formulaire est le seul contenu */
+.full-page-form {
+    min-height: 90vh;
+    padding: 5rem 2rem;
+}
+.full-page-form .subtitle {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+}
+
+/* Style pour les sections de texte sans image associée (comme la Section Activités) */
+.full-width-text .text {
+    flex: 1 1 100%;
+    max-width: 900px; /* Limiter la largeur du contenu pour la lisibilité */
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center; /* Centrer le texte principal */
+}
+
+.full-width-text ul {
+    text-align: left; /* Réaligner les listes à gauche pour un look pro */
+    margin-top: 20px;
+}
+
+/* Style pour les grilles des pôles et des épreuves */
+.poles-grid, .epreuves-grid {
+    /* Utilisation de Flexbox pour la compatibilité, mais Grid est souvent préférable ici */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.pole-item h3, .epreuve-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.epreuve-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .pole-item, .epreuve-item {
+        /* Sur mobile, les éléments prennent toute la largeur */
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+

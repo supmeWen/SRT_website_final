@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supméca Racing Team – Projet Karting</title>
+
+  <meta name="description" content="Supméca Racing Team – Découvrez nos projets et compétitions de karting pour les étudiants passionnés de course automobile.">
+  <meta name="keywords" content="Supméca Racing Team, karting, compétition étudiante, course automobile, ISAE Supméca, projet mécanique, pilotage">
+  <meta name="author" content="Supméca Racing Team">
+
+  <meta property="og:title" content="Supméca Racing Team – Projet Karting">
+  <meta property="og:description" content="Nos activités de karting pour les étudiants passionnés de course automobile.">
+  <meta property="og:image" content="https://ton-site.netlify.app/image_file/karting.jpg">
+  <meta property="og:url" content="https://ton-site.netlify.app/htm_file/karting.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../image_file/logo.png">
+
+  <link rel="stylesheet" href="../demo.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+
+  <style>
+    /* AJOUT CRUCIAL pour les carrousels : Assurer une hauteur fixe et uniforme */
+    .swiper {
+        width: 100%;
+        height: auto;
+        margin: 20px auto 40px; /* Ajout d'une marge */
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px; /* HAUTEUR FIXE POUR LES SLIDES (Ajustez si besoin) */
+        overflow: hidden; /* Cache ce qui dépasse */
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ESSENTIEL : Assure que l'image couvre toute la zone sans déformer le slide */
+        border-radius: 8px;
+    }
+    /* S'assurer que les flèches sont visibles sur les fonds clairs */
+    .swiper-button-next, .swiper-button-prev {
+        color: var(--primary-red) !important;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <header>
+    <a href="../index.html" aria-label="Retour à l'accueil">
+      <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="association.html">PRÉSENTATION</a></li>
+        <li class="active"><a href="karting.html">KARTING</a></li>
+        <li><a href="reparation.html">RÉPARATION MÉCANIQUE</a></li>
+        <li><a href="formula_student.html">FORMULA STUDENT</a></li>
+        <li><a href="simulateur.html">SIMULATEUR</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 style="display:none;">Projet Karting Supméca Racing Team</h1>
+
+    <section class="section reverse">
+      <div class="image" style="background-image: url('../image_file/karting.jpg');" data-aos="fade-right" role="img" aria-label="Pilote de karting sur circuit"></div>
+      <div class="text" data-aos="fade-left">
+        <h2>Initiation et Plaisir : Le Projet Karting</h2>
+        <p>Le karting est avant tout notre activité d'initiation au pilotage et à la stratégie de course au sein d'ISAE-Supméca. Il permet à nos membres de découvrir les sensations de la compétition dans une ambiance conviviale et formatrice.</p>
+        <p>Plus qu'un simple loisir, c'est l'entraînement clé pour nos pilotes qui se préparent aux grandes épreuves d'endurance et inter-étudiantes, et une excellente base pour comprendre la dynamique des véhicules, essentielle à la Formula Student.</p>
+        <a href="contact.html" class="btn-primary">Nous rejoindre pour la prochaine session</a>
+      </div>
+    </section>
+
+    <section class="section full-width-text" data-aos="fade-up">
+      <div class="text" style="flex: 1 1 80%; max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2>Nos Compétences acquises sur Piste</h2>
+        <p style="margin-bottom: 2rem;">Nos sessions de karting sont centrées sur l'acquisition de savoir-faire spécifiques en situation de course :</p>
+        <ul style="list-style-type: none; padding: 0; text-align: left; columns: 2; column-gap: 40px; font-size: 1.1rem;">
+          <li>🏎️ Gestion de Course : Maîtrise des dépassements et gestion du trafic.</li>
+          <li>🎯 Stratégie d'Endurance : Planification des relais et gestion du temps de piste.</li>
+          <li>🧠 Maîtrise du Pilotage : Techniques de trajectoires et optimisation des temps au tour.</li>
+          <li>🤝 Communication d'Équipe : Échanges rapides et efficaces durant les relais.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section full-width-text" id="competitions" data-aos="fade-up">
+        <div class="text" style="flex: 1 1 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem;">
+            <h2 style="text-align: center; color: var(--primary-red); margin-bottom: 1.5rem;">Les Grandes Compétitions Étudiantes</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Chaque année, le SRT engage des pilotes dans les épreuves d'endurance les plus prestigieuses du circuit étudiant, comme les 24h de l'ESSEC et divers championnats inter-écoles. Ces courses représentent un défi logistique et humain majeur.</p>
+
+            <div class="swiper swiper-comp">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG-20231108-WA0004.jpg" alt="Compétition étudiante photo 1" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG-20240512-WA0020.jpg" alt="Compétition étudiante photo 2" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG_20240512_015925.jpg" alt="Compétition étudiante photo 3" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG_20240512_042624.jpg" alt="Compétition étudiante photo 4" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG_20240512_142513.jpg" alt="Compétition étudiante photo 5" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG_20240512_142515.jpg" alt="Compétition étudiante photo 6" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/24h_photo/IMG_20240512_142743.jpg" alt="Compétition étudiante photo 7" loading="lazy">
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-button-next-comp" style="color: var(--primary-orange);"></div>
+                <div class="swiper-button-prev swiper-button-prev-comp" style="color: var(--primary-orange);"></div>
+                <div class="swiper-pagination swiper-pagination-comp"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section full-width-text" id="grand-prix" data-aos="fade-up">
+        <div class="text" style="flex: 1 1 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem;">
+            <h2 style="text-align: center; color: var(--primary-red); margin-bottom: 1.5rem;">Le Grand Prix Karting ISAE-Supméca</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Pour inclure tous les étudiants de l'école, le SRT organise son propre Grand Prix interne. C'est l'occasion de confronter les différentes promotions et départements dans une course amicale et de dénicher les futurs talents de l'équipe de course.</p>
+
+            <div class="swiper swiper-gp">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/20250515_150613865_iOS.jpg" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/20250515_150613908_iOS.jpg" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/20250515_150613994_iOS.jpg" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/20250515_150614038_iOS.jpg" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_42.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_43.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_44.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_45.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_46.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_47.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../image_file/inter_gp_photo/crepes2_48.JPG" alt="Photo de l'équipe aux 24h de l'ESSEC" loading="lazy">
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-button-next-gp" style="color: var(--primary-orange);"></div>
+                <div class="swiper-button-prev swiper-button-prev-gp" style="color: var(--primary-orange);"></div>
+                <div class="swiper-pagination swiper-pagination-gp"></div>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="contact.html" class="btn-secondary">Contacter l'équipe</a>
+    </p>
+    <p>
+      📧 <a href="mailto:supmeca.racingteam@isae-supmeca.fr">supmeca.racingteam@isae-supmeca.fr</a>
+    </p>
+
+    <div class="social-links" style="margin-top: 15px;">
+      <a href="https://www.instagram.com/supmeca_racing_team/" target="_blank" rel="noopener noreferrer" style="margin-right: 15px;">
+        <img src="../image_file/instagram_icon.svg" alt="Instagram Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        @supmeca_racing_team
+      </a>
+
+      <a href="https://www.linkedin.com/company/supmeca_racing_team/" target="_blank" rel="noopener noreferrer">
+         <img src="../image_file/linkedin_icon.svg" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        LinkedIn
+      </a>
+    </div>
+
+    <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // Initialisation du Carrousel des Compétitions (swiper-comp)
+    var swiperComp = new Swiper(".swiper-comp", {
+      grabCursor: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: ".swiper-button-next-comp",
+        prevEl: ".swiper-button-prev-comp",
+      },
+      pagination: {
+        el: ".swiper-pagination-comp",
+        clickable: true,
+      },
+      loop: true, // Boucle infinie
+      breakpoints: {
+        640: { slidesPerView: 1, spaceBetween: 20, },
+        768: { slidesPerView: 2, spaceBetween: 30, },
+        1024: { slidesPerView: 3, spaceBetween: 30, },
+      },
+    });
+
+    // Initialisation du Carrousel du Grand Prix (swiper-gp)
+    var swiperGP = new Swiper(".swiper-gp", {
+      grabCursor: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: ".swiper-button-next-gp",
+        prevEl: ".swiper-button-prev-gp",
+      },
+      pagination: {
+        el: ".swiper-pagination-gp",
+        clickable: true,
+      },
+      loop: true,
+      breakpoints: {
+        640: { slidesPerView: 1, spaceBetween: 20, },
+        768: { slidesPerView: 2, spaceBetween: 30, },
+        1024: { slidesPerView: 3, spaceBetween: 30, },
+      },
+    });
+  </script>
+</body>
+</html>

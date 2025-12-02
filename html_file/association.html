@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supméca Racing Team – Notre Club et son Histoire</title>
+
+  <meta name="description" content="Découvrez l'histoire, les valeurs et l'équipe de Supméca Racing Team, l'association étudiante passionnée de compétition automobile et d'ingénierie.">
+  <meta name="keywords" content="Supméca Racing Team, ISAE Supméca, club étudiant, histoire, association, compétition automobile, Formula Student, karting, simulateur">
+  <meta name="author" content="Supméca Racing Team">
+
+  <meta property="og:title" content="Supméca Racing Team – Notre club">
+  <meta property="og:description" content="Découvrez l'histoire, les valeurs et l'équipe de Supméca Racing Team.">
+  <meta property="og:image" content="https://ton-site.netlify.app/image_file/logo.png">
+  <meta property="og:url" content="https://ton-site.netlify.app/htm_file/association.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../image_file/logo.png">
+
+  <link rel="stylesheet" href="../demo.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+
+  <style>
+    /* === Timeline CSS === */
+    .timeline-container {
+      position: relative;
+      margin: 2rem auto;
+      padding: 2rem 0;
+      max-width: 800px;
+    }
+
+    /* Ligne centrale verticale */
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: var(--primary-orange);
+    }
+
+    /* Chaque étape de la timeline */
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    /* Dot sur la ligne */
+    .timeline-dot {
+      position: absolute;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background: var(--primary-red);
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      z-index: 2;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -10px;
+    }
+
+    .timeline-date {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--primary-orange);
+    }
+
+    .timeline-content {
+      background: var(--white);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      /* Ajout pour l'image */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Style pour les images de la timeline */
+    .timeline-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .timeline-container::before {
+        left: 10px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 20px;
+        text-align: left !important;
+      }
+      .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+        left: 0 !important;
+      }
+      .timeline-item .timeline-dot {
+        left: -10px !important;
+        right: auto !important;
+      }
+      .section-timeline h2 {
+        text-align: center;
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#top" aria-label="Retour à l'accueil">
+      <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="association.html">PRÉSENTATION</a></li>
+        <li><a href="karting.html">KARTING</a></li>
+        <li><a href="reparation.html">RÉPARATION MÉCANIQUE</a></li>
+        <li><a href="formula_student.html">FORMULA STUDENT</a></li>
+        <li><a href="simulateur.html">SIMULATEUR</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="hidden-title" style="display:none;">Supméca Racing Team – Association</h1>
+
+    <section class="section" id="intro-association">
+      <div class="image" style="background-image: url('../image_file/bureau_2024-2025.jpeg');" data-aos="fade-right" role="img" aria-label="Photo de groupe des membres du club."></div>
+      <div class="text" data-aos="fade-left">
+        <h2>Notre Club : Un Moteur de Passion</h2>
+        <p>Supméca Racing Team rassemble des étudiants passionnés par la mécanique et la compétition automobile. Fondé en 2015, notre club est un pilier de la vie associative de l'ISAE-Supméca, dédié à transformer la théorie de l'ingénierie en projets concrets.</p>
+        <p>Nous organisons des ateliers, événements et projets ambitieux (Formula Student, Karting, Simulateur) pour transmettre notre savoir-faire, développer des compétences pratiques et cultiver l'esprit d'équipe. Rejoindre le SRT, c'est s'immerger dans le cœur technique de la course !</p>
+      </div>
+    </section>
+
+    <section class="section-timeline" id="chronology" data-aos="fade-up">
+      <h2 style="text-align: center; color: var(--primary-red); margin-bottom: 3rem;">Chronologie de Notre Histoire</h2>
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2015</div>
+          <div class="timeline-content">
+            <img src="../image_file/ancien_local_ouvert.jpg" alt="Photo de l'ancien local à la fondation du club." loading="lazy">
+            <h3>Fondation du MECALINK</h3>
+            <p>Création officielle du MECALINK (ancien nom du Supméca Racing Team) par un groupe d'étudiants passionnés. L'objectif était d'allier théorie mécanique et pratique automobile.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2015</div>
+          <div class="timeline-content">
+            <img src="../image_file/tp_moteur.jpg" alt="Image d'un TP de démontage moteur." loading="lazy">
+            <h3>Démontage Moteur et Ateliers</h3>
+            <p>Lancement des premiers ateliers de découverte mécanique, incluant des travaux pratiques (TP) de démontage de moteurs et de véhicules, pour initier les membres à la maintenance automobile.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2016</div>
+          <div class="timeline-content">
+            <img src="../image_file/ancien_local_ext.jpg" alt="Image de l'ancien local avant son évacuation." loading="lazy">
+            <h3>Transition de Local</h3>
+            <p>Clap de fin pour l'ancien local du MECALINK. L'association prépare sa transition logistique et structurelle pour accueillir de nouveaux projets.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2016</div>
+          <div class="timeline-content">
+            <img src="../image_file/ecoshell.jpg" alt="Photo du véhicule du Shell Eco-marathon." loading="lazy">
+            <h3>Shell Eco-marathon</h3>
+            <p>Le MECALINK participe à la célèbre compétition Eco-Shell marathon, mettant à l'honneur la sobriété énergétique et l'ingénierie légère pour parcourir la plus longue distance avec le moins de carburant possible.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023</div>
+          <div class="timeline-content">
+            <img src="../image_file/SRT%20Logo%20-%20NB.png" alt="Logo Supméca Racing Team en noir et blanc." loading="lazy">
+            <h3>Changement d'Identité : SRT</h3>
+            <p>En 2023, le MECALINK fait peau neuve en devenant Supméca Racing Team (SRT). Un nouveau projet d'envergure est lancé, marquant le début de la participation à la compétition Formula Student.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <img src="../image_file/simulateur.jpg" alt="Monoplace SRT en conception pour 2025." loading="lazy">
+            <h3>Simulateur</h3>
+            <p>L'équipe SRT se lance dans la construction de son propre simulateur de course en collaboration avec le Makerspace.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section reverse" id="notre-equipe">
+      <div class="image" style="background-image: url('../image_file/photo_groupe_gp_2025.jpeg');" data-aos="zoom-in" role="img" aria-label="Photo de l'équipe Supméca Racing Team au complet."></div>
+      <div class="text" data-aos="fade-left">
+        <h2>Une Équipe, Une passion</h2>
+        <p>Notre équipe est regroupé à travers les différents projets que nous menons tout au long de l'année. Chaque membre apporte ses connaissances techniques et sa passion pour faire avancer le projet dans une ambiance de partage qui nous est chère.</p>
+        <p>Nous encourageons la montée en compétence à travers le mentorat et la prise de responsabilités. Si vous êtes étudiant(e) ou juste passionné(e) par la conception, la fabrication ou la course, rejoignez-nous !</p>
+        <a href="contact.html" class="btn-primary">Rejoindre l'équipe</a>
+      </div>
+    </section>
+
+    <section class="section" id="nos-projets">
+      <div class="image" style="background-image: url('../image_file/photo_gp_kart.jpeg');" data-aos="fade-left" role="img" aria-label="Vue d'ensemble des différents projets du club."></div>
+      <div class="text" data-aos="fade-right">
+        <h2>Un Engagement Concret</h2>
+        <p>Le club est une plateforme pour l'apprentissage pratique de l'ingénierie et de l'univers automobile. Que ce soit pour la maintenance d'un moteur de kart, la conception mécanique, nos projets sont conçus pour combiner théorie académique et défis réels de la compétition.</p>
+        <p>La diversité de nos projets permet à nos membres de mettre en avant leur compétence ou leur motivation. Les projets comme la formula student et les 24h de l'ESSEC sont régulièrement présentées aux partenaires et aux compétitions nationales, garantissant une visibilité et une expérience professionnalisante à tous nos membres.</p>
+        <a href="../index.html#formula" class="btn-secondary">Voir tous nos Projets</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="contact.html" class="btn-secondary">Contacter l'équipe</a>
+    </p>
+    <p>
+      📧 <a href="mailto:supmeca.racingteam@isae-supmeca.fr">supmeca.racingteam@isae-supmeca.fr</a>
+    </p>
+
+    <div class="social-links" style="margin-top: 15px;">
+      <a href="https://www.instagram.com/supmeca_racing_team/" target="_blank" rel="noopener noreferrer" style="margin-right: 15px;">
+        <img src="../image_file/Instagram_logo_2022.svg.png" alt="Instagram Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        @supmeca_racing_team
+      </a>
+
+      <a href="https://www.linkedin.com/company/supmeca-racing-team/" target="_blank" rel="noopener noreferrer">
+        <img src="../image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
+        LinkedIn
+      </a>
+    </div>
+
+    <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
