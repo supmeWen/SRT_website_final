@@ -1,0 +1,33 @@
+name: Déploiement Statique sur Netlify
+
+on:
+  # Déclenche le workflow à chaque fois que du code est poussé sur la branche 'main'
+  push:
+    branches:
+      - main
+
+# Ce workflow s'exécutera sur un Job nommé 'deploy'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code (Récupération des fichiers)
+        # Utilise l'action officielle de GitHub pour récupérer les fichiers du dépôt
+        uses: actions/checkout@v4
+
+      # ----------------------------------------------------
+      # ÉTAPE CLÉ : Déploiement sans Build Netlify
+      # ----------------------------------------------------
+      - name: Déploiement direct sur Netlify (via CLI)
+        uses: netlify/actions/cli@master
+        id: netlify_deploy
+        with:
+          # --prod: déploie sur le site principal
+          # --dir=./: spécifie que les fichiers statiques sont à la racine (./) du dépôt.
+          # Si vos fichiers HTML sont dans un sous-dossier, changez './' par 'mon-dossier-site/'
+          args: deploy --prod --dir=./
+        env:
+          # Utilise le Secret que vous avez configuré à l'étape 2
+          NETLIFY_AUTH_TOKEN: ${{ secrets.nfp_r5epFLBxU5fPHmM6qecLqbMepwYTNMrg4df2 }}
+          # REMPLACEZ CE TEXTE par l'ID réel de votre site Netlify (Site Settings > General)
+          NETLIFY_SITE_ID: "[aa9efd71-8f85-4917-b0b2-3b35a429490d]"
