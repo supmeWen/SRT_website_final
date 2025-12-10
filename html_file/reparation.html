@@ -30,6 +30,15 @@
     <a href="../index.html" aria-label="Retour à l'accueil">
       <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
     </a>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+
     <nav>
       <ul>
         <li><a href="association.html">PRÉSENTATION</a></li>
@@ -71,7 +80,7 @@
         <div class="image" style="background-image: url('../image_file/ancien_local_ext.jpg');" data-aos="fade-left" role="img" aria-label="Restauration du véhicule Renault 4L."></div>
         <div class="text" data-aos="fade-right">
             <h2 style="color: var(--primary-orange);">Projet 4L et Compétitions de Raid</h2>
-            <p>La préparation d'un véhicule comme la 4L pour des compétitions de raid (type 4L Trophy) ou des rallyes d'endurance est un exercice complet de fiabilisation, de soudure sur châssis, et d'aménagement tout-terrain. Un défi unique pour nos ingénieurs.</p>
+            <p>La préparation d'un véhicule comme la 4L pour des compétitions de raid (4L Trophy) a été un exercice complet de fiabilisation, de soudure sur châssis, et d'aménagement tout-terrain. Ce défi réalisé entre 2016 et 2019 a été l'occasion pour nos apprentis ingénieures de mettre leurs compétences au service d'une action humanitaire</p>
         </div>
     </section>
 
@@ -79,7 +88,7 @@
         <div class="image" style="background-image: url('../image_file/Demontage_Lancia.jpg');" data-aos="fade-right" role="img" aria-label="Travaux de réparation sur une Lancia Delta."></div>
         <div class="text" data-aos="fade-left">
             <h2 style="color: var(--primary-orange);">Restauration et Maintenance Lancia</h2>
-            <p>Nous avons également travaillé sur des projets plus rares et exigeants, comme la restauration d'une Lancia. Ces projets permettent d'aborder des mécaniques spécifiques et de développer des compétences en carrosserie et en ingénierie des véhicules de collection/performance.</p>
+            <p>Nous avons également travaillé sur des projets plus rares et exigeants entre 2018 et 2019, comme la restauration d'une Lancia. Ces projets permettent d'aborder des mécaniques spécifiques et de développer des compétences en carrosserie et en ingénierie des véhicules de collection/performance.</p>
         </div>
     </section>
 
@@ -124,7 +133,7 @@
         @supmeca_racing_team
       </a>
 
-      <a href="https://www.linkedin.com/company/supmeca-racing-team/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/company/supm%C3%A9ca-racingteam" target="_blank" rel="noopener noreferrer">
         <img src="../image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
         LinkedIn
       </a>
@@ -133,7 +142,34 @@
     <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
   </footer>
 
+  <div id="scroll-to-top" role="button" aria-label="Retourner en haut de la page"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    // Initialisation de AOS (une seule fois)
+    AOS.init();
+
+    // --- Script Scroll to Top ---
+    const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+    // Afficher/Cacher le bouton en fonction du défilement
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) { // 300px est la distance à partir de laquelle le bouton apparaît
+        scrollToTopBtn.classList.add("show-scroll");
+      } else {
+        scrollToTopBtn.classList.remove("show-scroll");
+      }
+    });
+
+    // Fonction de défilement fluide
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Défilement fluide
+      });
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>

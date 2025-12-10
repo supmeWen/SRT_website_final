@@ -10,6 +10,13 @@
   --grey-light: #F0F0F4;       /* Fond clair */
 }
 
+/* --- CORRECTION ESSENTIELLE DE BOÎTE (Box Model) --- */
+/* Empêche le débordement (scroll horizontal) en incluant le padding et la bordure dans la largeur. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
 /* =========================
    Base du site
    ========================= */
@@ -329,7 +336,7 @@ label {
   color: var(--primary-dark);
 }
 
-input, textarea {
+input, textarea, select { /* Ajout de select ici pour la compatibilité box-sizing */
   width: 100%;
   padding: 1rem; /* Plus de padding pour les champs */
   border: 1px solid #ccc;
@@ -382,96 +389,209 @@ footer a:hover {
    Responsive
    ========================= */
 @media (max-width: 900px) {
-  /* Header */
-  header {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  header img {
-    margin-bottom: 0.5rem;
-  }
+    /* GARDE-FOU: Empêche le défilement horizontal de la page entière (Problème carrousels) */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
 
-  /* Navigation */
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
+    /* Header */
+    header {
+      /* Le header doit être relative pour que le nav absolu se positionne correctement */
+      position: relative;
+      padding: 1rem;
+      flex-direction: row; /* Alignement logo/burger horizontal */
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    header img {
+      margin-bottom: 0;
+    }
 
-  nav ul li {
-    margin: 0.3rem 0.5rem;
-  }
+    /* Navigation */
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
 
-  /* Hero */
-  .hero {
-    height: 60vh; /* Moins haut sur mobile */
-  }
+    nav ul li {
+      margin: 0.3rem 0.5rem;
+    }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+    /* Hero */
+    .hero {
+      height: 60vh; /* Moins haut sur mobile */
+    }
 
-  .hero p {
-    font-size: 1.1rem;
-  }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
 
-  /* Sections */
-  .section {
-    flex-direction: column !important; /* Force le 'column' pour toutes les sections sur mobile */
-    min-height: auto;
-  }
+    .hero p {
+      font-size: 1.1rem;
+    }
 
-  .image {
-    min-height: 40vh;
-    order: 1; /* L'image sera toujours au-dessus du texte, sauf si vous voulez l'inverser */
-  }
+    /* Sections */
+    .section {
+      flex-direction: column !important; /* Force le 'column' pour toutes les sections sur mobile */
+      min-height: auto;
+      /* Supprimer le padding horizontal de l'élément le plus externe */
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-  .text {
-    flex: 1 1 100%;
-    padding: 2rem 1rem;
-    text-align: center;
-    order: 2;
-  }
+    /* CIBLAGE SPÉCIFIQUE DES SECTIONS EN PLEINE LARGEUR */
+    .section.full-width-text, .full-page-form {
+        /* S'assurer que les conteneurs pleins largeur n'ont pas de padding sur les côtés */
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 
-  .text a.btn-secondary {
-    margin-top: 1rem;
-  }
 
-  /* Sponsors */
-  .sponsors h2, .contact h2 {
-    font-size: 2rem;
-  }
+    .image {
+      min-height: 40vh;
+      order: 1; /* L'image sera toujours au-dessus du texte */
+    }
 
-  .sponsor-logos {
-    gap: 1.5rem;
-  }
+    .text {
+      flex: 1 1 100%;
+      /* Réduire le padding horizontal interne, mais le maintenir pour la lisibilité */
+      padding: 2rem 1rem;
+      text-align: center;
+      order: 2;
+    }
 
-  .sponsor-logos img {
-    max-height: 60px;
-  }
+    /* Retirer le padding horizontal du .text à l'intérieur de .full-width-text */
+    .section.full-width-text .text {
+        padding: 1.5rem 1rem !important;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
 
-  /* Contact */
-  form {
-    padding: 1.5rem;
-  }
+    /* Viser le Swiper lui-même */
+    .swiper {
+        min-width: 0;
+        max-width: 100vw;
+    }
 
-  /* Frise chronologique */
-  .timeline-container {
-    padding-left: 1rem;
-    border-left: 2px solid var(--primary-orange);
-  }
+    .text a.btn-secondary {
+      margin-top: 1rem;
+    }
 
-  .timeline-dot {
-    left: -6px;
-    width: 12px;
-    height: 12px;
-  }
+    /* Sponsors */
+    .sponsors h2, .contact h2 {
+      font-size: 2rem;
+    }
+
+    .sponsor-logos {
+      gap: 1.5rem;
+    }
+
+    .sponsor-logos img {
+      max-height: 60px;
+    }
+
+    /* Contact */
+    form {
+      padding: 1.5rem;
+      margin: 0 1rem; /* Ajouter une marge pour que le formulaire ne colle pas les bords de l'écran */
+    }
+
+    /* Frise chronologique */
+    .timeline-container {
+      padding-left: 1rem;
+      border-left: 2px solid var(--primary-orange);
+    }
+
+    .timeline-dot {
+      left: -6px;
+      width: 12px;
+      height: 12px;
+    }
+
+    /* --- MENU BURGER --- */
+    /* Révéler l'icône sur mobile */
+    .menu-icon {
+        display: block !important;
+        position: relative; /* Relative pour être dans le flux Flex */
+        order: 2;
+        z-index: 1001; /* Assure que le bouton est cliquable au-dessus du nav */
+        align-self: center; /* Centrer verticalement dans le header */
+    }
+
+    /* Le logo est aligné à gauche */
+    header a[aria-label="Retour à l'accueil"] {
+        order: 1;
+        z-index: 1001;
+    }
+
+    /* Le menu de navigation (le panneau qui descend) */
+    header nav {
+        order: 3;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-dark);
+        opacity: 0.98;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        z-index: 1000; /* Doit être sous l'icône */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 0.8rem 2rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Correction de l'ombre pour la page active sur mobile */
+    nav ul li a:hover,
+    nav ul li a:focus,
+    nav ul li.active a {
+        border-bottom: none !important;
+        background: rgba(242, 126, 38, 0.2);
+    }
+
+
+    /* ÉTAT ACTIF (QUAND LE MENU EST OUVERT) */
+    #menu-toggle:checked ~ nav {
+        max-height: 500px;
+    }
+
+    /* Animation de la croix */
+    #menu-toggle:checked ~ .menu-icon .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #menu-toggle:checked ~ .menu-icon .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked ~ .menu-icon .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 /* Style additionnel pour les pages de contact si le formulaire est le seul contenu */
 .full-page-form {
     min-height: 90vh;
-    padding: 5rem 2rem;
+    padding: 5rem 2rem; /* Le padding sera annulé par la règle responsive ci-dessus */
 }
 .full-page-form .subtitle {
     max-width: 700px;
@@ -521,3 +641,98 @@ footer a:hover {
     }
 }
 
+/* --- NOUVELLE RÈGLE POUR ALIGNER LES ÉLÉMENTS DANS LA CARTE --- */
+.document-grid .doc-item {
+    /* Rendre le doc-item un conteneur flex */
+    display: flex;
+    /* Aligner les éléments verticalement (titre, paragraphe, bouton) */
+    flex-direction: column;
+    /* Espacer le contenu pour pousser le bouton en bas */
+    justify-content: space-between;
+
+    /* Styles existants pour l'apparence */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* --- MODIFICATION SPÉCIFIQUE DU BOUTON --- */
+.document-grid .doc-item .btn-primary {
+    /* Assurez-vous que le bouton est centré horizontalement s'il ne prend pas toute la largeur */
+    align-self: center; /* Centre le bouton dans l'espace restant */
+    width: 80%; /* Pour une belle apparence centrée */
+    max-width: 250px;
+
+    /* Retire la marge supérieure du style inline que vous aviez dans l'HTML */
+    margin-top: auto; /* Pousse le bouton vers le bas de l'espace restant */
+}
+
+/* =========================
+   Bouton Retour en Haut (Scroll to Top)
+   ========================= */
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px; /* Distance du bas */
+    right: 20px;  /* Distance de la droite */
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-dark); /* Couleur du club */
+    color: var(--white);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.7; /* Légère transparence */
+    transition: opacity 0.3s, background-color 0.3s, visibility 0.3s;
+    z-index: 1000; /* Assure qu'il est au-dessus de tout */
+    visibility: hidden; /* Caché par défaut */
+}
+
+#scroll-to-top:hover {
+    opacity: 1;
+    background-color: var(--primary-orange); /* Effet au survol */
+}
+
+/* Révéler le bouton lorsque l'utilisateur a défilé */
+.show-scroll {
+    visibility: visible !important;
+}
+
+/* Style de l'icône (utilise un caractère simple comme flèche) */
+#scroll-to-top::after {
+    content: '↑'; /* Flèche vers le haut */
+    font-weight: bold;
+    display: block;
+    line-height: 50px;
+}
+
+
+/* =========================
+   Menu Burger et Mobile
+   ========================= */
+
+/* Cache la checkbox invisible qui contrôle le menu */
+#menu-toggle {
+    display: none;
+}
+
+/* Style de l'icône burger */
+.menu-icon {
+    display: none; /* Caché par défaut (sur desktop) */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 11; /* Au-dessus de tout */
+}
+
+/* Les trois lignes du burger */
+.menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}

@@ -54,6 +54,15 @@
     .swiper-button-next, .swiper-button-prev {
         color: var(--primary-red) !important;
     }
+    @media (max-width: 768px) {
+        /* S'assure que le carrousel ne déborde pas du conteneur .text */
+        .section .swiper {
+            min-width: 0; /* Permet au swiper de se contracter dans l'espace disponible */
+            padding: 0 10px; /* Ajout d'un petit padding pour l'esthétique si nécessaire, mais attention au box-sizing! */
+        }
+        /* Assurez-vous que l'élément .text lui-même n'a pas de padding excessif sur mobile (ce qui est géré dans demo.css) */
+    }
+
   </style>
 
 </head>
@@ -65,6 +74,15 @@
     <a href="../index.html" aria-label="Retour à l'accueil">
       <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
     </a>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+
     <nav>
       <ul>
         <li><a href="association.html">PRÉSENTATION</a></li>
@@ -85,7 +103,7 @@
       <div class="text" data-aos="fade-left">
         <h2>Initiation et Plaisir : Le Projet Karting</h2>
         <p>Le karting est avant tout notre activité d'initiation au pilotage et à la stratégie de course au sein d'ISAE-Supméca. Il permet à nos membres de découvrir les sensations de la compétition dans une ambiance conviviale et formatrice.</p>
-        <p>Plus qu'un simple loisir, c'est l'entraînement clé pour nos pilotes qui se préparent aux grandes épreuves d'endurance et inter-étudiantes, et une excellente base pour comprendre la dynamique des véhicules, essentielle à la Formula Student.</p>
+        <p>Plus qu'un simple loisir, c'est l'entraînement clé pour nos pilotes qui se préparent aux grandes épreuves d'endurance et inter-étudiantes et une excellente base pour comprendre la dynamique des véhicules, essentielle à la Formula Student.</p>
         <a href="contact.html" class="btn-primary">Nous rejoindre pour la prochaine session</a>
       </div>
     </section>
@@ -97,7 +115,7 @@
         <ul style="list-style-type: none; padding: 0; text-align: left; columns: 2; column-gap: 40px; font-size: 1.1rem;">
           <li>🏎️ Gestion de Course : Maîtrise des dépassements et gestion du trafic.</li>
           <li>🎯 Stratégie d'Endurance : Planification des relais et gestion du temps de piste.</li>
-          <li>🧠 Maîtrise du Pilotage : Techniques de trajectoires et optimisation des temps au tour.</li>
+          <li>🧠 Maîtrise du Pilotage : Techniques de pilotage et optimisation des trajectoires.</li>
           <li>🤝 Communication d'Équipe : Échanges rapides et efficaces durant les relais.</li>
         </ul>
       </div>
@@ -106,7 +124,7 @@
     <section class="section full-width-text" id="competitions" data-aos="fade-up">
         <div class="text" style="flex: 1 1 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem;">
             <h2 style="text-align: center; color: var(--primary-red); margin-bottom: 1.5rem;">Les Grandes Compétitions Étudiantes</h2>
-            <p style="text-align: center; margin-bottom: 3rem;">Chaque année, le SRT engage des pilotes dans les épreuves d'endurance les plus prestigieuses du circuit étudiant, comme les 24h de l'ESSEC et divers championnats inter-écoles. Ces courses représentent un défi logistique et humain majeur.</p>
+            <p style="text-align: center; margin-bottom: 3rem;">Chaque année, SRT engage des pilotes dans les épreuves d'endurance les plus prestigieuses du circuit étudiant, comme les 24h de l'ESSEC et divers championnats inter-écoles. Ces courses représentent un défi logistique et humain majeur.</p>
 
             <div class="swiper swiper-comp">
                 <div class="swiper-wrapper">
@@ -142,7 +160,7 @@
     <section class="section full-width-text" id="grand-prix" data-aos="fade-up">
         <div class="text" style="flex: 1 1 100%; max-width: 1000px; margin: 0 auto; padding: 4rem 2rem;">
             <h2 style="text-align: center; color: var(--primary-red); margin-bottom: 1.5rem;">Le Grand Prix Karting ISAE-Supméca</h2>
-            <p style="text-align: center; margin-bottom: 3rem;">Pour inclure tous les étudiants de l'école, le SRT organise son propre Grand Prix interne. C'est l'occasion de confronter les différentes promotions et départements dans une course amicale et de dénicher les futurs talents de l'équipe de course.</p>
+            <p style="text-align: center; margin-bottom: 3rem;">Pour inclure tous les étudiants de l'école, SRT organise son propre Grand Prix interne. C'est l'occasion de confronter les différentes promotions dans une course amicale et de dénicher les futurs talents de l'équipe de course.</p>
 
             <div class="swiper swiper-gp">
                 <div class="swiper-wrapper">
@@ -186,8 +204,7 @@
             </div>
         </div>
     </section>
-  </main>
-
+ </main>
   <footer>
     <p>
       <a href="contact.html" class="btn-secondary">Contacter l'équipe</a>
@@ -202,7 +219,7 @@
         @supmeca_racing_team
       </a>
 
-      <a href="https://www.linkedin.com/company/supmeca_racing_team/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/company/supm%C3%A9ca-racingteam" target="_blank" rel="noopener noreferrer">
          <img src="../image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
         LinkedIn
       </a>
@@ -211,10 +228,35 @@
     <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <div id="scroll-to-top" role="button" aria-label="Retourner en haut de la page"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialisation de AOS (UNE SEULE FOIS)
+    AOS.init();
+
+    // --- Script Scroll to Top ---
+    const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+    // Afficher/Cacher le bouton en fonction du défilement
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) { // 300px est la distance à partir de laquelle le bouton apparaît
+        scrollToTopBtn.classList.add("show-scroll");
+      } else {
+        scrollToTopBtn.classList.remove("show-scroll");
+      }
+    });
+
+    // Fonction de défilement fluide
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Défilement fluide
+      });
+    });
+  </script>
 
   <script>
     // Initialisation du Carrousel des Compétitions (swiper-comp)

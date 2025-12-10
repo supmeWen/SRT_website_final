@@ -30,6 +30,15 @@
     <a href="../index.html" aria-label="Retour à l'accueil">
       <img src="../image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
     </a>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+
     <nav>
       <ul>
         <li><a href="association.html">PRÉSENTATION</a></li>
@@ -49,7 +58,7 @@
       <div class="image" style="background-image: url('../image_file/simulateur.jpg');" data-aos="fade-left" role="img" aria-label="Étudiant utilisant le simulateur de course."></div>
       <div class="text" data-aos="fade-right">
         <h2>Initiation et Entraînement : Le Simulateur de Course</h2>
-        <p>Notre simulateur a deux missions principales. Il permet d'abord à tous les étudiants de l'ISAE-Supméca de découvrir de manière ludique les sensations du pilotage de course et les bases de la dynamique automobile.</p>
+        <p>Notre simulateur a deux missions principales. Il permet d'abord à tous les étudiants d'ISAE-Supméca de découvrir de manière ludique les sensations du pilotage de course et les prémices de la dynamique automobile.</p>
         <p>Ensuite, il sert de plateforme d'entraînement pour nos pilotes et les équipes participantes aux compétitions d'endurance externes (comme les 24h de l'ESSEC). C'est un outil essentiel pour maîtriser la stratégie et les réflexes en course.</p>
         <a href="contact.html" class="btn-primary">Essayer le simulateur</a>
       </div>
@@ -59,8 +68,8 @@
       <div class="image" style="background-image: url('../image_file/simulateur_chassis.jpg');" data-aos="fade-right" role="img" aria-label="Structure du simulateur et vérins hydrauliques ou électriques."></div>
       <div class="text" data-aos="fade-left">
         <h2>Conception : Un Châssis Dynamique pour l'Immersion</h2>
-        <p>L'aspect technique se concentre sur la structure : nous concevons un châssis en profilés d'aluminium rigides et modulables. Le simulateur est monté sur des **vérins** qui reproduisent les mouvements de la voiture (tangage, roulis), offrant des sensations de pilotage véritable.</p>
-        <p>Nous utilisons le logiciel de simulation Assetto Corsa pour ses modèles physiques avancés. Les données de ce logiciel sont directement exploitées pour alimenter la logique des vérins, garantissant une immersion de haute fidélité pour l'entraînement.</p>
+        <p>L'aspect technique se concentre sur la structure : nous concevons un châssis en profilés d'aluminium rigides et modulables. Le simulateur sera monté sur des **vérins** qui reproduisent les mouvements de la voiture (tangage, roulis), offrant de véritables sensations de pilotage.</p>
+        <p>Nous utilisons le logiciel de simulation Assetto Corsa pour ses modèles physiques avancés. Les données de ce logiciel sont directement exploitées pour alimenter la dynamique des vérins, garantissant une immersion de haute fidélité lors de l'entraînement.</p>
       </div>
     </section>
 
@@ -70,7 +79,7 @@
         <p style="margin-bottom: 2rem;">La participation au projet Simulateur permet d'acquérir des compétences spécifiques au-delà de la simple formation académique :</p>
         <ul style="list-style-type: none; padding: 0; text-align: left; columns: 2; column-gap: 40px; font-size: 1.1rem;">
           <li>🏎️ Pilotage Compétitif : Maîtrise des techniques de pilotage et endurance mentale (préparation 24h ESSEC).</li>
-          <li>🔧 Conception Mécanique : Dimensionnement et fabrication de la structure modulaire en aluminium.</li>
+          <li>🔧 Conception Mécanique : Dimensionnement et fabrication de la structure modulable en aluminium.</li>
           <li>💡 Électronique de Commande : Intégration des actionneurs et gestion des systèmes de vérin.</li>
           <li>🤝 Événementiel : Organisation de sessions de découverte au sein du club et de l'école.</li>
         </ul>
@@ -88,7 +97,7 @@
         <img src="../image_file/Instagram_logo_2022.svg.png" alt="Instagram Supméca Racing Team" style="height: 24px; vertical-align: middle;">
         @supmeca_racing_team
       </a>
-      <a href="https://www.linkedin.com/company/supmeca-racing-team/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/company/supm%C3%A9ca-racingteam" target="_blank" rel="noopener noreferrer">
         <img src="../image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
         LinkedIn
       </a>
@@ -97,7 +106,34 @@
     <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
   </footer>
 
+
+  <div id="scroll-to-top" role="button" aria-label="Retourner en haut de la page"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    // Initialisation de AOS (une seule fois)
+    AOS.init();
+
+    // --- Script Scroll to Top ---
+    const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+    // Afficher/Cacher le bouton en fonction du défilement
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) { // 300px est la distance à partir de laquelle le bouton apparaît
+        scrollToTopBtn.classList.add("show-scroll");
+      } else {
+        scrollToTopBtn.classList.remove("show-scroll");
+      }
+    });
+
+    // Fonction de défilement fluide
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Défilement fluide
+      });
+    });
+  </script>
 </body>
+</html>
 </html>

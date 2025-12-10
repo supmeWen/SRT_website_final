@@ -30,6 +30,15 @@
     <a href="#top" aria-label="Retour à l'accueil">
       <img src="image_file/logo.png" alt="Logo Supméca Racing Team" class="logo">
     </a>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+
     <nav>
       <ul>
         <li><a href="html_file/association.html">PRÉSENTATION</a></li>
@@ -61,7 +70,7 @@
       <div class="text" data-aos="fade-left">
         <h2>Notre Club</h2>
         <p>Supméca Racing Team rassemble des étudiants passionnés par l’ingénierie et la compétition automobile. Nous partageons nos connaissances et créons des projets innovants.</p>
-        <a href="htm_file/association.html" class="btn-secondary">Découvrir l'Association</a>
+        <a href="html_file/association.html" class="btn-secondary">Découvrir l'Association</a>
       </div>
     </section>
 
@@ -70,7 +79,7 @@
       <div class="text" data-aos="fade-right">
         <h2>Karting</h2>
         <p>Nous participons à des courses de karting et organisons des événements pour nos membres afin d'apprendre la compétition et le pilotage.</p>
-        <a href="htm_file/karting.html" class="btn-secondary">Voir nos événements Karting</a>
+        <a href="html_file/karting.html" class="btn-secondary">Voir nos événements Karting</a>
       </div>
     </section>
 
@@ -79,7 +88,7 @@
       <div class="text" data-aos="fade-left">
         <h2>Réparation Mécanique</h2>
         <p>Nos ateliers permettent aux étudiants d’acquérir des compétences en maintenance, réparation et optimisation de véhicules de course.</p>
-        <a href="htm_file/reparation.html" class="btn-secondary">Nos Compétences en Maintenance</a>
+        <a href="html_file/reparation.html" class="btn-secondary">Nos Compétences en Maintenance</a>
       </div>
     </section>
 
@@ -88,7 +97,7 @@
       <div class="text" data-aos="fade-right">
         <h2>Formula Student</h2>
         <p>Nous concevons et construisons une monoplace pour participer à la compétition étudiante internationale Formula Student.</p>
-        <a href="htm_file/formula_student.html" class="btn-secondary">Découvrir le Projet Monoplace</a>
+        <a href="html_file/formula_student.html" class="btn-secondary">Découvrir le Projet Monoplace</a>
       </div>
     </section>
 
@@ -97,7 +106,7 @@
       <div class="text" data-aos="fade-left">
         <h2>Simulateur</h2>
         <p>Nous développons un simulateur de course pour sensibiliser au pilotage et à la dynamique des véhicules, en combinant mécanique et informatique.</p>
-        <a href="htm_file/simulateur.html" class="btn-secondary">Voir le Projet Simulateur</a>
+        <a href="html_file/simulateur.html" class="btn-secondary">Voir le Projet Simulateur</a>
       </div>
     </section>
 
@@ -136,7 +145,7 @@
         @supmeca_racing_team
       </a>
 
-      <a href="https://www.linkedin.com/company/supmeca-racing-team/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/company/supm%C3%A9ca-racingteam" target="_blank" rel="noopener noreferrer">
         <img src="image_file/LinkedIn_icon.svg.png" alt="LinkedIn Supméca Racing Team" style="height: 24px; vertical-align: middle;">
         LinkedIn
       </a>
@@ -145,7 +154,32 @@
     <p style="margin-top: 20px;">Supméca Racing Team – Tous droits réservés &copy; 2025</p>
   </footer>
 
+  <div id="scroll-to-top" role="button" aria-label="Retourner en haut de la page"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    // Initialisation de AOS (une seule fois)
+    AOS.init();
+
+    // --- Script Scroll to Top ---
+    const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+    // Afficher/Cacher le bouton en fonction du défilement
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) { // 300px est la distance à partir de laquelle le bouton apparaît
+        scrollToTopBtn.classList.add("show-scroll");
+      } else {
+        scrollToTopBtn.classList.remove("show-scroll");
+      }
+    });
+
+    // Fonction de défilement fluide
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Défilement fluide
+      });
+    });
+  </script>
 </body>
 </html>
