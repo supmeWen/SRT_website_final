@@ -27,7 +27,5 @@ jobs:
           # Si vos fichiers HTML sont dans un sous-dossier, changez './' par 'mon-dossier-site/'
           args: deploy --prod --dir=./
         env:
-          # Utilise le Secret que vous avez configuré à l'étape 2
-          NETLIFY_AUTH_TOKEN: ${{ secrets.nfp_r5epFLBxU5fPHmM6qecLqbMepwYTNMrg4df2 }}
-          # REMPLACEZ CE TEXTE par l'ID réel de votre site Netlify (Site Settings > General)
-          NETLIFY_SITE_ID: "[aa9efd71-8f85-4917-b0b2-3b35a429490d]"
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
